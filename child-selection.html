@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery 1st Lesson</title>
+	<style type="text/css">
+		/*li { color:black; }*/
+
+		/*This will apply on li that will descendent of ul don't care is it children or grandchild just children*/
+		/*ul.emphasis li {
+			color: red;
+		}*/
+		/*This will apply on those li are direct children of ul*/
+		
+		/*ul.emphasis > li {
+			color:red;
+		}*/
+		/*Apply css on a class*/
+		.container { color: green;}
+		/*.emphasis { color: red;}*/
+		/*Others way*/
+		/*ul .emphasis { font-weight: bold;}*/
+	</style>
+	
+</head>
+<body>
+<div class="container">
+	<h1>Hello</h1>
+	<p>Welcome in site</p>
+		<ul class="emphasis">
+		<!-- <ul> -->
+			<li>hello</li>
+			<li>hello1</li>
+			<li>hello1</li>
+			<li>hello1</li>
+			<li>hello1</li>
+			<li>
+				<ul>
+					<li>hello from the nest.</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<ul class="emphasis">
+	<!-- <ul> -->
+		<li>hello</li>
+		<li>hello1</li>
+		<li>hello1</li>
+		<li>hello1</li>
+		<li>hello1</li>
+		<li>
+			<div class="container">
+				<li>hello from the nest.</li>
+			</div>
+		</li>
+	</ul>
+</div>
+
+	<script type="text/javascript" src="jquery-2.2.2.min.js"></script>
+	<script type="text/javascript">
+		// By jQuery we do this
+		// children will return immediate children of the parent
+		// $(function(){
+		// if we only need the children then stick with children method
+			// $('ul.emphasis').children('li').css('color','red');	
+			// find will serching all li & apply the css 		
+			// $('ul.emphasis').find('li').css('color','red');			
+			// find will searching first li and apply class emphasis with the element 
+			// $('ul.emphasis').find('li:first').addClass('emphasis');			
+			// $('ul.emphasis').children('li:first').addClass('emphasiss');			
+			// $('ul.emphasis').children('li').first().addClass('emphasis');			
+			// $('ul.emphasis').children('li:nth-child(2)').text('added with jQuery');			
+			// $('ul.emphasis').children('li').eq(1).text('added with jQuery');		
+			//In Javascript many things counting start from 0	
+			// $('ul.emphasis').children('li').eq(3).next().text('added with jQuery');	
+			// $('ul.emphasis').children('li').eq(3).prev().text('added with jQuery');	
+			// If you want to previous you use prev		
+			// $('ul.emphasis').children('li').eq(3).prev().text('added with jQuery');	
+			// If you want to select children you use children
+			// If you want to select descendent you use find
+			// We can select & apply the css in more compact way
+			// $('ul.emphasis li:nth-child(3)').text('added with jQuery');	
+			// In nested way
+			// $('ul.emphasis')
+			// 	.children('li')
+			// 		.eq(3)
+			// 			.prev().text('added with jQuery');	
+
+			// $('li').parent().removeClass('emphasis');
+			// it's more specific	
+			// $('li').parent('ul').removeClass('emphasis');
+			// More specific way
+			// $('li').parents('div.container').removeClass('container');
+			// Another way
+			// $('li').closest('div.container').removeClass('container');
+			// See the difference between parents & closest
+			console.log($('ul').parents('.container'));
+			console.log($('ul').closest('.container'));
+			// $('li').parents('.container').removeClass('container');
+			// Another way
+			// $('li').closest('div.container').removeClass('container');
+					
+		// })
+	</script>
+</body>
+</html>

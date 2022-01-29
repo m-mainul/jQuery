@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+	$("document").ready(function() {
+		//Get all link tag then set attribute target which vlaue is blank
+		// $("a").attr("target","_blank");
+		// Remove an attribute like href from all link tag
+		// $("a").removeAttr("href");
+		// Change the properties attributes
+		$("img").attr({src:"images/Barot_Bellingham.jpg", alt:"Barot Bellingham"});
+	});
+	</script>
+	<style type="text/css">
+		img {
+			margin: 20px;
+			width: 400px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+	<a href="images/Hillary_Goldwynn.jpg"><img src="images/Hillary_Goldwynn.jpg" alt="image"></a>
+</body>
+</html>

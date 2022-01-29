@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery 1st Lesson</title>
+	<link rel="stylesheet" type="text/css" href="day.css">
+	<style type="text/css">
+	</style>
+	
+</head>
+<body>
+	
+	<h1>My Website</h1>
+	
+	<!-- Always button text will not same as css file -->
+	<!-- <button>Day</button> -->
+	<!-- <button>Night</button> -->
+	<!-- instead we use data-file attribute as same as css file  -->
+	<!-- we can use any type of data attribute -->
+	<!-- only difference is that its preceding prefix is data -->
+	<!-- that's the browser says hey i am a custom attribute -->
+	<button data-file="day">Day</button>
+	<button data-file=night>Night</button>
+
+	<script type="text/javascript" src="jquery-2.2.2.min.js"></script>
+	<script type="text/javascript">	
+	// Those are global variable 
+	// available in global scope
+	// var someVar,
+		// myVar;
+	// window.myVar;
+	// immediately execute after page load
+	(function() {
+		// Target the button & listen when clicked on
+		// Then pass a function when clicked on the button 
+		// then execute this function
+		// best practices store the references in the link instead of jumping every time in dom
+		var link = $('link');
+		$('button').click(function(){
+			// console.log('Button was clicked!');
+			// Here this refers to the element that was clicked
+			// console.log(this);
+			// if we want to access jQuery methods then we wrapped to this in jQuery 
+			// Then we access all jQuery method
+			// console.log($(this));
+			// text is a jQuery method but there's this not working 
+			// becuase this is not wrapped in jQuery 
+			// $(this).text('changed');
+
+			// Here select an ul & store in uls
+			// var uls = $('ul');
+			// apply click() method on this ul
+			// uls.click();
+
+			// uls.find('li:first-child').text()
+			// $('link').attr('href', 'night.css');
+			// var stylesheet = $(this).text().toLowerCase();
+			// one way is access data attribute
+			// var stylesheet = $(this).attr('data-file');
+			// jQuery has better way to access data file named data
+			// when using data cut off prefix data only use second portion after hypen
+			// cached the this object
+			// don't multiple var instead use one var & others are written sequentially
+			var $this = $(this),
+				stylesheet = $(this).data('file');
+			// console.log(stylesheet);
+			
+			link.attr('href', stylesheet + '.css');
+
+			// more simplest form
+			$this
+				.siblings('button')
+					.removeAttr('disabled')
+					.end()
+					.attr('disabled', 'disabled');
+			// $(this).siblings('button').removeAttr('disabled');
+			// $this.siblings('button').removeAttr('disabled');
+
+			// $this.attr('disabled', 'disabled');
+		});				
+	})();	
+
+	// (function() {
+	// 	// Target the button & listen when clicked on
+	// 	// Then pass a function when clicked on the button 
+	// 	// then execute this function
+	// 	$('button').hover(function(){
+	// 		// console.log('Button was clicked!');
+	// 		// Here this refers to the element that was clicked
+	// 		console.log(this);
+	// 	});				
+	// })();					
+	</script>
+</body>
+</html>

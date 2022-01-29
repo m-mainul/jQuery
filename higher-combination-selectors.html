@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+	$("document").ready(function() {
+		// let me paragraph list item that has class b applied
+		// $("p, li.b").css("border","3px solid red");
+		// descendant selector inside ul tag & list item applied class a 
+		// $("ul li.a").css("border","3px solid red");
+		// find a paragraph tag that are next to ul tag
+		// $("ul + p").css("border","3px solid red");
+		// gives me the paragraph siblings of list1
+		$("#list1 ~ p").css("border","3px solid red");
+	});
+	</script>
+	<style type="text/css">
+	.a { color: Navy;}
+	.b { color: Maroon;}
+	</style>
+</head>
+<body>
+	<ul id="list1">
+		<li class="a">item 1</li>
+		<li class="a">item 2</li>
+		<li class="b">item 3</li>
+		<li class="b">item 4</li>
+	</ul>
+	<p class="a">This is paragraph 1</p>
+	<p>This is paragraph 2</p>
+	<p class="b">This is paragraph 3</p>
+	<p>This is paragraph 4</p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+	$("document").ready(function() {
+		// Select the paragraph that contains text string 3
+		// e.g of contains(text)
+		// $("p:contains(3)").css("border", "3px solid red");
+		// that highlights everything	
+		// $(":contains(3)").css("border", "3px solid red");	
+		// highlights those paragraph that are parent they contain at least one element, including only text
+		// $("p:parent").css("border", "3px solid red");	
+		// look ul that has a list item which has a class attribute b
+		// $("ul:has(li[class=b])").css("border", "3px solid red");	
+		// return the li whcih is the 3 child of the ul 
+		// $("ul li:nth-child(3)").css("border", "3px solid red");	
+		// Would match child elements 2,4,6,8 etc.
+		// $("ul li:nth-child(2n)").css("border", "3px solid red");	
+		// Would match child element 3,6,9 etc.
+		$("ul li:nth-child(3n)").css("border", "3px solid red");	
+	});
+	</script>
+	<style type="text/css">
+	.a { color: Navy;}
+	.b { color: Maroon;}
+	</style>
+</head>
+<body>
+	<ul id="list1">
+		<li class="a">item 1</li>
+		<li class="a">item 2</li>
+		<li class="b">item 3</li>
+		<li class="b">item 4</li>
+	</ul>
+	<p class="a">This is paragraph 1</p>
+	<p id="para1">This is paragraph 2</p>
+	<p class="b">This is paragraph 3</p>
+	<p id="para4" lang="en-us">This is paragraph 4</p>
+</body>
+</html>

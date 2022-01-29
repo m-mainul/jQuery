@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery 24 Lesson</title>
+</head>
+<body>
+	<h1>Something to save</h1>
+	<form action="#">
+	<input name="name"></input>
+		<textarea name="content" id="content" cols="30" rows="10">
+		</textarea>
+		<p><button type="submit">Save</button></p>
+	</form>	
+	<div class="wrap"></div>
+
+	<script type="text/javascript" src="jquery-2.2.2.min.js"></script>
+	<script type="text/javascript">
+		// listen for click
+		$('form').on('submit', function(e) {
+			// We grab the input by using serialize
+			console.log($(this).serialize());
+			// console.log($(this).find('#content').val());
+
+			// disable default action
+			e.preventDefault();
+		});
+		
+		// grab textarea content
+		
+		// post content to script, and save 
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Using the Data Methods</title>
+  <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+  <script>
+   $("document").ready(function() {
+     $("#store").click(function () {
+      // .data( key, value )
+      // key:type-string - A string naming the piece of data to set.
+      // value:type-anything - The new data value; this can be any Javascript type except undefined.
+      // .data(obj)
+      // type-object - An object of key-value pairs of data to update.
+      $("#div1").data("key1",1234);
+      $("#div1").data("key2","Mainul Hasan");
+     });
+
+     $("#remove").click(function () {
+      $("#div1").removeData();
+     });
+
+     $("#show").click(function () {
+      alert($("#div1").data("key1"));
+      alert($("#div1").data("key2"));
+     });
+   });
+ </script>
+ <style type="text/css">
+    #div1 {
+      width: 200px;
+      height: 100px;
+      background-color: blue;
+      color: white;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Using the Data Methods</h1>
+  <p>jQuery can associate arbitrary data with page elements. Use the controls below to exercise the data() and removeData() functions.</p>
+  <div id="div1">Sample DIV</div>
+  <p>
+    <button id="store">Click to store data</button>&nbsp;
+    <button id="remove">Click to remove data</button>&nbsp;
+    <button id="show">Click to show data</button></p>
+  </body>
+  </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+	$("document").ready(function() {
+		//count number of p elements using length function
+		//alert("There are " + $("p").length + " <p> elements");		
+		//count number of p elements using size() functions
+		// alert("There are " + $("p").size() + " <p> elements");		
+		//get() returns an array of li elements 
+		// var elems = $('li').get();
+		// length will return the size of elems array
+		// alert("There are " + elems.length + " <li> tags");
+		// return an object of index 0
+		// alert($('li').get(0));
+		// Select ul tag and find li tag that has the class b and apply the following css
+		// $("ul").find("li.b").css("border","3px solid red");
+
+		var leftmargin = 0;
+		var border = 3;
+		$("p").each(function() {
+			// here this refers to current p elements
+			$(this).css("border",border + "px solid red");
+			$(this).css("margin-left",leftmargin);
+			border += 2;
+			leftmargin += 10;
+		});
+	});
+	</script>
+	<style type="text/css">
+	.a { color: Navy;}
+	.b { color: Maroon;}
+	</style>
+</head>
+<body>
+	<ul id="list1">
+		<li class="a">item 1</li>
+		<li class="a">item 2</li>
+		<li class="b">item 3</li>
+		<li class="b">item 4</li>
+	</ul>
+	<p class="a">This is paragraph 1</p>
+	<p id="para1">This is paragraph 2</p>
+	<p class="b">This is paragraph 3</p>
+	<p id="para4" lang="en-us">This is paragraph 4</p>
+</body>
+</html>

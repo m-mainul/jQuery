@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery 1st Lesson</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	
+</head>
+<body>
+	<dl>
+		<dt>What are your hours?</dt>
+		<dd>We are open 24/7.</dd>
+		<dt>What are your hours?</dt>
+		<dd>We are open 24/7.</dd>
+		<dt>What are your hours?</dt>
+		<dd>We are open 24/7.</dd>
+		<dt>What are your hours?</dt>
+		<dd>We are open 24/7.</dd>
+		<dt>What are your hours?</dt>
+		<dd>We are open 24/7.</dd>
+	</dl>
+	<script type="text/javascript" src="jquery-2.2.2.min.js"></script>
+	<script type="text/javascript">        
+		(function(){ 
+			// var dd = $('dd');
+
+			// i.e. we select 4th one minimum
+			$('dd').filter(':nth-child(n+4)').addClass('hide');
+
+			$('dt').on('mouseenter',function () {
+				// Avoid repetition
+				// $(this).next().siblings('dd').hide();
+				// $(this).next().show();
+				
+				// Just use method chaining
+				// $(this)
+				// 	.next()
+				// 		.show()
+				// 		.siblings('dd')
+				// 			.hide();
+
+				// Slide up
+				// $(this)
+				// 	.next()
+				// 		.show()
+				// 		.siblings('dd')
+				// 			.slideUp(300); // 2000 ms or 2sec.
+
+				// Slide up & Down 
+				$(this)
+					.next()
+						.slideDown(200)
+						.siblings('dd')
+							.slideUp(200); // 2000 ms or 2sec.
+
+			})
+
+			// jQuery offers
+			// This will add display none with the element
+			// dd.hide();
+			// We can also use a class which has a property display none
+			// dd.addClass('hide');
+			// dd.show();
+			// dd.fadeIn();
+			// dd.slideDown();
+			// dd.toggle(); // if it visible hide it if it is hidden then show it
+		})();
+	</script>
+</body>
+</html>
